@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head><title>Primefaces cu Dan Horea</title> 
+<style>
+<!--
+.ui-widget{
+font-size: 85% !important;
+}
+.ui-state-hover{
+font-size: 100% !important;
+}
+-->
+</style>
+</h:head>
+<h:body>
+	<div  align="center">
+	<h:form>
+		<p:panel header="Primefaces cu Dan Horea!" style="width:500px;">
+			<h:panelGrid id="grid" columns="2" cellpadding="5">
+				<h:outputLabel value="judetul: " />
+					<p:selectOneMenu value="#{judBean.jud}"> 
+						<f:selectItems value="#{countyBean.judete}"/>
+					</p:selectOneMenu>
+				<h:outputLabel value="Capitala: " />
+ 				<h:outputLabel value="#{judBean.capit}" id="capitala"/>
+ 				<h:outputLabel value="abrevierea: " />
+ 				<h:outputLabel value="#{judBean.abrev}" id="abrevierea"/>
+			</h:panelGrid>
+			 <p:commandButton value="Alege!" update="capitala abrevierea" />
+		</p:panel>	
+
+
+	</h:form>
+	</div>
+	<div align="center" >
+	<p:fieldset legend="Alege tema!" style="width: 500px;">
+		<h:form >
+			<h:panelGrid columns="4">
+				<p:commandButton value="afternoon" onclick="PrimeFaces.changeTheme('afternoon')"/>
+				<p:commandButton value="pepper-grinder" onclick="PrimeFaces.changeTheme('pepper-grinder')"/>
+				<p:commandButton value="midnight" onclick="PrimeFaces.changeTheme('midnight')"/>
+				<p:commandButton value="start" onclick="PrimeFaces.changeTheme('start')"/>
+			</h:panelGrid>
+		</h:form>
+	</p:fieldset>
+</div>
+		
+</h:body></html>
